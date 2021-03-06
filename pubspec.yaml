@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.1
   flip_card: ^0.4.4
+  rflutter_alert: ^1.1.0
 
 dev_dependencies:
   flutter_test:

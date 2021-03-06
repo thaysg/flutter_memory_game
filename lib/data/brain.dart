@@ -6,20 +6,46 @@ enum Level { Easy, Medium, Hard }
 List<String> imageArray() {
   return [
     'images/avengers.jpeg',
+    'images/avengers.jpeg',
+
     'images/black_panther.jpeg',
+    'images/black_panther.jpeg',
+
     'images/black_widow.jpeg',
-    'images/bucky.jpeg',
+    'images/black_widow.jpeg',
+
     'images/captain.jpeg',
-    'images/drax.jpeg',
-    'images/falcon.jpeg',
+    'images/captain.jpeg',
+
     'images/gamora.jpeg',
+    'images/gamora.jpeg',
+
     'images/groot.jpeg',
-    'images/hulk.jpeg',
+    'images/groot.jpeg',
+
     'images/iron_man.jpeg',
-    'images/ironman-removebg-preview.png',
+    'images/iron_man.jpeg',
+
+    'images/rocket.jpeg',
+    'images/rocket.jpeg',
+
+    'images/war_machine.jpeg',
+    'images/war_machine.jpeg',
+
+    'images/wanda.jpeg',
+    'images/wanda.jpeg',
+
+    //'images/ironman-removebg-preview.png',
+/*
     'images/logo.jpeg',
+    'images/logo.jpeg',
+
     'images/logo2.jpeg',
+    'images/logo2.jpeg',
+
     'images/mantis.jpeg',
+    'images/mantis.jpeg',
+    
     'images/rocket.jpeg',
     'images/spider.jpeg',
     'images/star_lord.jpeg',
@@ -29,6 +55,7 @@ List<String> imageArray() {
     'images/vision.jpeg',
     'images/wanda.jpeg',
     'images/war_machine.jpeg'
+    */
   ];
 }
 
@@ -40,11 +67,11 @@ List getLevel(Level level) {
       levelType.add(element);
     });
   } else if (level == Level.Medium) {
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 12; i++) {
       levelType.add(levelArray[i]);
     }
   } else if (level == Level.Easy) {
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < 8; i++) {
       levelType.add(levelArray[i]);
     }
   }
@@ -55,15 +82,15 @@ List getLevel(Level level) {
 List<bool> getInitialItem(Level level) {
   List<bool> item = List<bool>();
   if (level == Level.Hard) {
-    for (int i = 0; i < 24; i++) {
+    for (int i = 0; i < 20; i++) {
       item.add(true);
     }
   } else if (level == Level.Medium) {
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 12; i++) {
       item.add(true);
     }
   } else if (level == Level.Easy) {
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < 8; i++) {
       item.add(true);
     }
   }
@@ -74,15 +101,15 @@ List<GlobalKey<FlipCardState>> getCards(Level level) {
   List<GlobalKey<FlipCardState>> cardStateKeys =
       List<GlobalKey<FlipCardState>>();
   if (level == Level.Hard) {
-    for (int i = 0; i < 24; i++) {
+    for (int i = 0; i < 20; i++) {
       cardStateKeys.add(GlobalKey<FlipCardState>());
     }
   } else if (level == Level.Medium) {
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 12; i++) {
       cardStateKeys.add(GlobalKey<FlipCardState>());
     }
   } else if (level == Level.Easy) {
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < 8; i++) {
       cardStateKeys.add(GlobalKey<FlipCardState>());
     }
   }
