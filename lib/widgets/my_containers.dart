@@ -12,7 +12,7 @@ class MyContainers extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: 100,
+        height: MediaQuery.of(context).size.height * .15,
         width: double.infinity,
         decoration: BoxDecoration(
           color: colours,
@@ -21,11 +21,24 @@ class MyContainers extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Text(
-            title,
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: 40,
+                letterSpacing: 1.5,
+                wordSpacing: 1.5,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Regular',
+                color: Colors.black,
+                shadows: [
+                  Shadow(
+                      blurRadius: 5.0,
+                      color: Colors.amber[100],
+                      offset: Offset(0, 4.0)),
+                ],
+              ),
             ),
           ),
         ),

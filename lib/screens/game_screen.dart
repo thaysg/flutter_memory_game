@@ -4,7 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:memory_game/data/brain.dart';
 import 'package:memory_game/screens/home.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
+
+import 'home.dart';
 
 class GameScreen extends StatefulWidget {
   final Level _level;
@@ -65,41 +66,12 @@ class _GameScreenState extends State<GameScreen> {
     _time = 5;
     _left = (_data.length ~/ 2);
     _isFinished = false;
-    _onAlertButtonsPressed(context);
     Future.delayed(Duration(seconds: 6), () {
       setState(() {
         _start = true;
         _timer.cancel();
       });
     });
-  }
-
-  //AlertButton
-  _onAlertButtonsPressed(context) {
-    Alert(
-      context: context,
-      image: Image.asset('images/iron_man.jpeg'),
-      title: "Parabéns",
-      buttons: [
-        DialogButton(
-          child: Text(
-            "Jogar Novamente",
-            style: TextStyle(color: Colors.white, fontSize: 18),
-          ),
-          onPressed: () {
-            Navigator.of(context).pop(
-              MaterialPageRoute(
-                builder: (context) => HomeScreen(),
-              ),
-            );
-          },
-          gradient: LinearGradient(colors: [
-            Color.fromRGBO(255, 0, 0, 1.0),
-            Color.fromRGBO(255, 0, 0, 1.0)
-          ]),
-        )
-      ],
-    ).show();
   }
 
   @override
@@ -120,31 +92,51 @@ class _GameScreenState extends State<GameScreen> {
         ? Scaffold(
             body: Center(
               child: Container(
+                margin: EdgeInsets.only(right: 50, left: 50),
+                decoration: BoxDecoration(
+                  /* color: Colors.red[900], */
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                height: 310,
+                width: MediaQuery.of(context).size.width,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset('images/iron_man.jpeg'),
+                    Image.asset(
+                      'images/ironMan.png',
+                      width: 150,
+                    ),
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          restart();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomeScreen(),
+                            ),
+                          );
+                          //restart();
                         });
                       },
-                      child: Container(
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: Colors.indigo[900],
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                        child: Column(
-                          children: [
-                            Text(
-                              "Jogar Novamente",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w500),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Container(
+                          height: 70,
+                          width: 170,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.indigo[900],
+                            borderRadius: BorderRadius.circular(24),
+                          ),
+                          child: Text(
+                            "Jogar Novamente",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w500,
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     ),

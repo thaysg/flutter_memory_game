@@ -15,16 +15,25 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: Text(
             'Memory Game',
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           centerTitle: true,
+          automaticallyImplyLeading: false,
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
               onTap: () {
-                GameScreen(Level.Easy);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GameScreen(Level.Easy),
+                  ),
+                );
               },
               child: MyContainers(
                 colours: Colors.indigo,
@@ -33,19 +42,29 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             GestureDetector(
               onTap: () {
-                GameScreen(Level.Medium);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GameScreen(Level.Medium),
+                  ),
+                );
               },
               child: MyContainers(
-                colours: Colors.amber,
+                colours: Colors.amber[900],
                 title: 'Medium',
               ),
             ),
             GestureDetector(
               onTap: () {
-                GameScreen(Level.Hard);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GameScreen(Level.Hard),
+                  ),
+                );
               },
               child: MyContainers(
-                colours: Colors.red,
+                colours: Colors.red[900],
                 title: 'Hard',
               ),
             ),

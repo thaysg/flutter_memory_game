@@ -7,59 +7,29 @@ List<String> imageArray() {
   return [
     'images/avengers.jpeg',
     'images/avengers.jpeg',
-
     'images/black_panther.jpeg',
     'images/black_panther.jpeg',
-
     'images/black_widow.jpeg',
     'images/black_widow.jpeg',
-
     'images/captain.jpeg',
     'images/captain.jpeg',
-
     'images/gamora.jpeg',
     'images/gamora.jpeg',
-
     'images/groot.jpeg',
     'images/groot.jpeg',
-
     'images/iron_man.jpeg',
     'images/iron_man.jpeg',
-
     'images/rocket.jpeg',
     'images/rocket.jpeg',
-
     'images/war_machine.jpeg',
     'images/war_machine.jpeg',
-
     'images/wanda.jpeg',
     'images/wanda.jpeg',
-
-    //'images/ironman-removebg-preview.png',
-/*
-    'images/logo.jpeg',
-    'images/logo.jpeg',
-
-    'images/logo2.jpeg',
-    'images/logo2.jpeg',
-
-    'images/mantis.jpeg',
-    'images/mantis.jpeg',
-    
-    'images/rocket.jpeg',
-    'images/spider.jpeg',
-    'images/star_lord.jpeg',
-    'images/strange.jpeg',
-    'images/thanos.jpeg',
-    'images/thor.jpeg',
-    'images/vision.jpeg',
-    'images/wanda.jpeg',
-    'images/war_machine.jpeg'
-    */
   ];
 }
 
 List getLevel(Level level) {
+  // ignore: deprecated_member_use
   List<String> levelType = List<String>();
   List levelArray = imageArray();
   if (level == Level.Hard) {
@@ -80,6 +50,7 @@ List getLevel(Level level) {
 }
 
 List<bool> getInitialItem(Level level) {
+  // ignore: deprecated_member_use
   List<bool> item = List<bool>();
   if (level == Level.Hard) {
     for (int i = 0; i < 20; i++) {
@@ -99,6 +70,7 @@ List<bool> getInitialItem(Level level) {
 
 List<GlobalKey<FlipCardState>> getCards(Level level) {
   List<GlobalKey<FlipCardState>> cardStateKeys =
+      // ignore: deprecated_member_use
       List<GlobalKey<FlipCardState>>();
   if (level == Level.Hard) {
     for (int i = 0; i < 20; i++) {
